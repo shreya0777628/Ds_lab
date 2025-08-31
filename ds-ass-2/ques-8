@@ -1,0 +1,11 @@
+#include <iostream>
+#include <set>
+using namespace std;
+
+int main() {
+    int values[] = {1,2,2,3,4,4,5};
+    int length = 7;
+    set<int> unique(values, values+length);
+    cout << "Distinct count: " << unique.size();
+    return 0;
+}
