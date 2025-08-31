@@ -1,0 +1,21 @@
+class UpperTri {
+    int n, *data;
+public:
+    UpperTri(int size) : n(size) { data = new int[n * (n + 1) / 2](); }
+
+    void set(int i, int j, int val) {
+        if (j >= i) {
+            int idx = (i - 1) * n - (i - 2) * (i - 1) / 2 + (j - i);
+            data[idx] = val;
+        }
+    }
+
+    int get(int i, int j) {
+        if (j >= i) {
+            int idx = (i - 1) * n - (i - 2) * (i - 1) / 2 + (j - i);
+            return data[idx];
+        }
+        return 0;
+    }
+
+void display
