@@ -1,0 +1,21 @@
+class LowerTri {
+    int n, *data;
+public:
+    LowerTri(int size) : n(size) { data = new int[n * (n + 1) / 2](); }
+
+    void set(int i, int j, int val) {
+        if (i >= j) data[i * (i - 1) / 2 + (j - 1)] = val;
+    }
+
+    int get(int i, int j) {
+        return (i >= j) ? data[i * (i - 1) / 2 + (j - 1)] : 0;
+    }
+
+    void display() {
+        for (int i = 1; i <= n; i++) {
+            for (int j = 1; j <= n; j++)
+                cout << get(i, j) << " ";
+            cout << "\n";
+        }
+    }
+};
